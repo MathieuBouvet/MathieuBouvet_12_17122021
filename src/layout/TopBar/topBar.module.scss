@@ -1,0 +1,30 @@
+.topBar {
+  grid-area: top-bar;
+  background-color: var(--color-foundation-dark);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(#000000, 0.25);
+}
+
+.logo {
+  margin-left: 30px;
+  margin-right: 12px;
+}
+
+.appTitle {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+
+.pseudoLinkContainer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  justify-content: space-around;
+  color: white;
+  font-size: 1.4rem;
+}

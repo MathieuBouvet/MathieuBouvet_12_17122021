@@ -1,0 +1,9 @@
+.appLayout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: 90px 1fr;
+  grid-template-areas:
+    "top-bar top-bar"
+    "vertical-bar .";
+}
