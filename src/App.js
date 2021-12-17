@@ -1,17 +1,15 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import AppLayout from "./layout/AppLayout";
-
-import styles from "./app.module.scss";
-
-const Hello = () => <div>Hello World ;)</div>;
+import UserDashboard from "./pages/UserDashboard";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<Hello />} />
+          <Route index element={<Navigate to="/user/12" />} />
+          <Route path="/user/:userId" element={<UserDashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>
