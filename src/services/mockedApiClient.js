@@ -1,5 +1,8 @@
 import { mockedData } from "../data/mockedData";
 
+// delay the mocked response for debugging purposes
+const delay = 1000;
+
 /**
  * Get the data at the given url
  * @param {string} url
@@ -11,7 +14,9 @@ function get(url) {
   const data = mockedData[ressource]?.[id]?.[subRessource];
 
   if (data != null) {
-    return Promise.resolve(data);
+    return new Promise(resolve => {
+      setTimeout(() => resolve(data), delay);
+    });
   }
   return Promise.reject({
     status: 404,
