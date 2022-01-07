@@ -1,0 +1,27 @@
+$color-primary: #ef0000;
+$color-foundation-dark: #020203;
+$color-foundation-light: #fbfbfb;
+$color-secondary: #74798c;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-lighten: #{lighten($color-primary, 35%)};
+
+  --color-secondary: #{$color-secondary};
+
+  --color-foundation-dark: #{$color-foundation-dark};
+  --color-foundation-light: #{$color-foundation-light};
+
+  --base-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,55 @@
+.loaderContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userDashboard {
+  padding: 65px 90px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .firstName {
+    color: var(--color-primary);
+  }
+
+  .chartContainer {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    grid-template-areas:
+      "activity key-data"
+      "sessions key-data";
+  }
+
+  .keyDataContainer {
+    grid-area: key-data;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .sessions {
+    display: flex;
+    gap: 30px;
+
+    & > * {
+      flex: 1 1 0;
+    }
+  }
+
+  .wip {
+    padding: 24px 30px;
+    background-color: var(--color-foundation-light);
+  }
+}

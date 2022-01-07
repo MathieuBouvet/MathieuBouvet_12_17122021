@@ -1,0 +1,25 @@
+.keyData {
+  background-color: var(--color-foundation-light);
+  border-radius: var(--base-radius);
+  display: flex;
+  gap: 25px;
+  padding: 32px;
+
+  .dataContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .label {
+    margin: 0;
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+  }
+
+  .count {
+    margin: 0;
+    font-weight: bold;
+  }
+}

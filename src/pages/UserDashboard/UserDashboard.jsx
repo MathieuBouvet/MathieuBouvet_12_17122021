@@ -2,6 +2,12 @@ import { useParams } from "react-router-dom";
 import useApi from "../../hooks/useApi";
 import apiRoutes from "../../services/apiRoutes";
 
+import Loader from "../../components/Loader";
+import KeyData from "../../components/KeyData";
+import UserScore from "../../components/UserScore";
+
+import styles from "./userDashboard.module.scss";
+
 const UserDashboard = () => {
   const { userId } = useParams();
   const userRoute = apiRoutes.user({ userId });
@@ -30,13 +36,45 @@ const UserDashboard = () => {
     });
   }
 
-  return (
-    <div>
-      {!allDataFetched ? (
-        <div>Loading...</div>
-      ) : (
-        <div>user {userId} data all fetched</div>
-      )}
+  return !allDataFetched ? (
+    <div className={styles.loaderContainer}>
+      <Loader />
+    </div>
+  ) : (
+    <div className={styles.userDashboard}>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.title}>
+          Bonjour{" "}
+          <span className={styles.firstName}>
+            {user.data.userInfos.firstName}
+          </span>
+        </h2>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+      </div>
+      <div className={styles.chartContainer}>
+        <div className={styles.activity}>
+          <div className={styles.wip}>activity chart</div>
+        </div>
+        <div className={styles.keyDataContainer}>
+          <KeyData iconPath="/icons/calories.svg" label="Calories" unit="kCal">
+            {user.data.keyData.calorieCount / 1000}
+          </KeyData>
+          <KeyData iconPath="/icons/protein.svg" label="Proteines" unit="g">
+            {user.data.keyData.proteinCount}
+          </KeyData>
+          <KeyData iconPath="/icons/carbs.svg" label="Glucides" unit="g">
+            {user.data.keyData.carbohydrateCount}
+          </KeyData>
+          <KeyData iconPath="/icons/fat.svg" label="Lipides" unit="g">
+            {user.data.keyData.lipidCount}
+          </KeyData>
+        </div>
+        <div className={styles.sessions}>
+          <div className={styles.wip}>session chart</div>
+          <div className={styles.wip}>performance chart</div>
+          <UserScore>{user.data.score * 100}</UserScore>
+        </div>
+      </div>
     </div>
   );
 };

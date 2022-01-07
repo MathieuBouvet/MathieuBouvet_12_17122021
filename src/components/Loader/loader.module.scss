@@ -1,0 +1,20 @@
+.loader {
+  --spinner-size: 75px;
+  display: inline-block;
+}
+
+.spinner {
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  margin: auto;
+  border: 8px solid var(--color-primary-lighten);
+  border-right-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.75s infinite cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
