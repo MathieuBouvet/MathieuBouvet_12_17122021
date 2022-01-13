@@ -57,7 +57,7 @@ function dataFetched(data) {
 function fetchFailed(error) {
   return {
     type: "FETCH_FAILED",
-    paylaod: error,
+    payload: error,
   };
 }
 
