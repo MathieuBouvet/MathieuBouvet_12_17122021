@@ -5,6 +5,10 @@ import apiRoutes from "../../services/apiRoutes";
 import Loader from "../../components/Loader";
 import KeyData from "../../components/KeyData";
 import UserScore from "../../components/UserScore";
+import SessionsChart from "../../components/SessionsChart";
+
+import { formatSessions } from "../../utils/formatSessions";
+import { formatUserdata } from "../../utils/formatUserData";
 
 import styles from "./userDashboard.module.scss";
 
@@ -15,9 +19,9 @@ const UserDashboard = () => {
   const userSessionsRoute = apiRoutes.userSessions({ userId });
   const userPerformanceRoute = apiRoutes.userPerformance({ userId });
 
-  const { state: user } = useApi(userRoute);
+  const { state: user } = useApi(userRoute, formatUserdata);
   const { state: userActivity } = useApi(userActivityRoute);
-  const { state: userSessions } = useApi(userSessionsRoute);
+  const { state: userSessions } = useApi(userSessionsRoute, formatSessions);
   const { state: userPerformance } = useApi(userPerformanceRoute);
 
   const allDataFetched = [
@@ -70,7 +74,7 @@ const UserDashboard = () => {
           </KeyData>
         </div>
         <div className={styles.sessions}>
-          <div className={styles.wip}>session chart</div>
+          <SessionsChart data={userSessions.data.sessions} />
           <div className={styles.wip}>performance chart</div>
           <UserScore>{user.data.score * 100}</UserScore>
         </div>
