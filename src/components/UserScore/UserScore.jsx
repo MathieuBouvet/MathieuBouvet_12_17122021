@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { PieChart, ResponsiveContainer, Pie, Label, LabelList } from "recharts";
+import { PieChart, ResponsiveContainer, Pie } from "recharts";
 
 import styles from "./userScore.module.scss";
 

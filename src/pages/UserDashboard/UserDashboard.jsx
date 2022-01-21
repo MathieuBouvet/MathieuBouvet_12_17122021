@@ -6,9 +6,11 @@ import Loader from "../../components/Loader";
 import KeyData from "../../components/KeyData";
 import UserScore from "../../components/UserScore";
 import SessionsChart from "../../components/SessionsChart";
+import ActivityChart from "../../components/ActivityChart";
 
 import { formatSessions } from "../../utils/formatSessions";
 import { formatUserdata } from "../../utils/formatUserData";
+import { formatActivity } from "../../utils/formatActivity";
 
 import styles from "./userDashboard.module.scss";
 
@@ -20,7 +22,7 @@ const UserDashboard = () => {
   const userPerformanceRoute = apiRoutes.userPerformance({ userId });
 
   const { state: user } = useApi(userRoute, formatUserdata);
-  const { state: userActivity } = useApi(userActivityRoute);
+  const { state: userActivity } = useApi(userActivityRoute, formatActivity);
   const { state: userSessions } = useApi(userSessionsRoute, formatSessions);
   const { state: userPerformance } = useApi(userPerformanceRoute);
 
@@ -57,7 +59,7 @@ const UserDashboard = () => {
       </div>
       <div className={styles.chartContainer}>
         <div className={styles.activity}>
-          <div className={styles.wip}>activity chart</div>
+          <ActivityChart data={userActivity.data.sessions}/>
         </div>
         <div className={styles.keyDataContainer}>
           <KeyData iconPath="/icons/calories.svg" label="Calories" unit="kCal">
