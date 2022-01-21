@@ -7,6 +7,7 @@ import KeyData from "../../components/KeyData";
 import UserScore from "../../components/UserScore";
 import SessionsChart from "../../components/SessionsChart";
 import ActivityChart from "../../components/ActivityChart";
+import PerformanceChart from "../../components/PerformanceChart";
 
 import { formatSessions } from "../../utils/formatSessions";
 import { formatUserdata } from "../../utils/formatUserData";
@@ -59,7 +60,7 @@ const UserDashboard = () => {
       </div>
       <div className={styles.chartContainer}>
         <div className={styles.activity}>
-          <ActivityChart data={userActivity.data.sessions}/>
+          <ActivityChart data={userActivity.data.sessions} />
         </div>
         <div className={styles.keyDataContainer}>
           <KeyData iconPath="/icons/calories.svg" label="Calories" unit="kCal">
@@ -77,7 +78,7 @@ const UserDashboard = () => {
         </div>
         <div className={styles.sessions}>
           <SessionsChart data={userSessions.data.sessions} />
-          <div className={styles.wip}>performance chart</div>
+          <PerformanceChart data={userPerformance.data.data} />
           <UserScore>{user.data.score * 100}</UserScore>
         </div>
       </div>

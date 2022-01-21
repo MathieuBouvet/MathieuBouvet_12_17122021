@@ -14,7 +14,7 @@ const Legend = ({ legendItems }) => {
       <ul className={styles.legendItems}>
         {legendItems.map(legendItem => {
           return (
-            <li className={styles.legendItem}>
+            <li className={styles.legendItem} key={legendItem.datakey}>
               <div
                 className={styles.bullet}
                 style={{ backgroundColor: legendItem.color }}
