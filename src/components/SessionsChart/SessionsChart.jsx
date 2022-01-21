@@ -8,7 +8,7 @@ import {
   Legend,
 } from "recharts";
 
-import CustomTooltip from "./Tooltip";
+import CustomTooltip from "./CustomTooltip";
 import CustomCursor from "./CustomCursor";
 
 import styles from "./sessionsChart.module.scss";
