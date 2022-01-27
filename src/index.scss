@@ -26,3 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
+
+g.recharts-polar-grid-angle line {
+  display: none;
+}

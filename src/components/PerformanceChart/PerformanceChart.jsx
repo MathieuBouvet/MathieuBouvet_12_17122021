@@ -43,10 +43,18 @@ const PerformanceChart = ({ data }) => {
           <Radar dataKey="value" fill="#FF0101B2" />
           <PolarAngleAxis
             dataKey="kind"
-            tickFormatter={kind => performanceLabel[kind]}
             stroke="white"
             tickLine={false}
             axisLine={false}
+            tick={props => {
+              const kind = props.payload.value;
+              const yOffset = kind === 3 ? 10 : 0;
+              return (
+                <text {...props} y={props.y + yOffset}>
+                  {performanceLabel[kind]}
+                </text>
+              );
+            }}
           />
         </RadarChart>
       </ResponsiveContainer>
