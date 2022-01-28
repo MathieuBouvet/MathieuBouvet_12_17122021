@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import useApi from "../../hooks/useApi";
 import apiRoutes from "../../services/apiRoutes";
 
@@ -34,13 +34,15 @@ const UserDashboard = () => {
     userPerformance.data,
   ].every(data => data != null);
 
-  if (allDataFetched) {
-    console.log({
-      user: user.data,
-      activity: userActivity.data,
-      sessions: userSessions.data,
-      performance: userPerformance.data,
-    });
+  const hasNotFoundError = [
+    user.error,
+    userActivity.error,
+    userSessions.error,
+    userPerformance.error,
+  ].some(error => error?.status === 404);
+
+  if (hasNotFoundError) {
+    return <Navigate to="/404" />;
   }
 
   return !allDataFetched ? (
