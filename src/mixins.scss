@@ -1,0 +1,5 @@
+@mixin not-large-desktop {
+  @media screen and (max-width: 1400px) {
+    @content;
+  }
+}

@@ -1,5 +1,9 @@
 .topBar {
-  grid-area: top-bar;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--top-bar-height);
   background-color: var(--color-foundation-dark);
   display: flex;
   align-items: center;

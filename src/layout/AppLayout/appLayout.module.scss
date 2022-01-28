@@ -1,9 +1,8 @@
-.appLayout {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  grid-template-rows: 90px 1fr;
-  grid-template-areas:
-    "top-bar top-bar"
-    "vertical-bar .";
+.mainContent {
+  margin-top: var(--top-bar-height);
+  margin-left: var(--vertical-bar-width);
+
+  width: calc(100vw - var(--vertical-bar-width));
+  height: calc(100vh - var(--top-bar-height));
+
 }

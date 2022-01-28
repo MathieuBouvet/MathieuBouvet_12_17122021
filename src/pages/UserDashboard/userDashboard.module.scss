@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .loaderContainer {
   height: 100%;
   display: flex;
@@ -7,7 +9,7 @@
 
 .userDashboard {
   padding: 65px 90px;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -40,6 +42,7 @@
   }
 
   .sessions {
+    grid-area: sessions;
     display: flex;
     gap: 30px;
 
@@ -51,5 +54,23 @@
   .wip {
     padding: 24px 30px;
     background-color: var(--color-foundation-light);
+  }
+}
+
+@include mixins.not-large-desktop {
+  .userDashboard {
+    .chartContainer {
+      grid-template-columns: 1fr;
+      grid-template-rows: minmax(85px, auto) minmax(250px, 1fr) minmax(250px, 1fr);
+      grid-template-areas:
+        "key-data"
+        "activity"
+        "sessions";
+    }
+
+    .keyDataContainer {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
 }

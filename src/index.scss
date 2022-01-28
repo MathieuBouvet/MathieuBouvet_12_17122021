@@ -13,6 +13,9 @@ $color-secondary: #74798c;
   --color-foundation-light: #{$color-foundation-light};
 
   --base-radius: 5px;
+
+  --top-bar-height: 90px;
+  --vertical-bar-width: 110px;
 }
 
 * {
@@ -24,7 +27,7 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 g.recharts-polar-grid-angle line {

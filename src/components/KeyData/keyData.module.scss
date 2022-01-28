@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .keyData {
   background-color: var(--color-foundation-light);
   border-radius: var(--base-radius);
@@ -21,5 +23,11 @@
   .count {
     margin: 0;
     font-weight: bold;
+  }
+}
+
+@include mixins.not-large-desktop {
+  .keyData {
+    padding: 16px;
   }
 }

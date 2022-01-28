@@ -1,5 +1,9 @@
 .verticalBar {
-  grid-area: vertical-bar;
+  position: fixed;
+  top: var(--top-bar-height);
+  left: 0;
+  width: var(--vertical-bar-width);
+  height: calc(100vh - var(--top-bar-height));
   background-color: var(--color-foundation-dark);
   display: flex;
   flex-direction: column;

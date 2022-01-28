@@ -7,10 +7,10 @@ import styles from "./appLayout.module.scss";
 
 const AppLayout = () => {
   return (
-    <div className={styles.appLayout}>
+    <div>
       <VerticalBar />
       <TopBar />
-      <main>
+      <main className={styles.mainContent}>
         <Outlet />
       </main>
     </div>
