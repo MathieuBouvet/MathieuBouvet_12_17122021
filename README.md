@@ -43,4 +43,4 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 You can configure the base url of the backend API by setting the value of the **REACT_APP_API_URL** variable.
 
-You can control whether the application uses mocked data by setting the value of the **REACT_APP_MOCK_API_CLIENT** to true. If set to false, the application with fetch the backend API normally.
+You can control wether the application uses mocked data by setting the value of the **REACT_APP_MOCK_API_CLIENT** to true. If set to false, the application will fetch the backend API normally.
