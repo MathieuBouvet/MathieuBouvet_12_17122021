@@ -3,6 +3,14 @@ import { PieChart, ResponsiveContainer, Pie } from "recharts";
 
 import styles from "./userScore.module.scss";
 
+/**
+ * Renders the user score
+ * 
+ * @param {Object} props
+ * @param {number} props.children The user score in percentages
+ * 
+ * @returns The user score component
+ */
 const UserScore = ({ children }) => {
   const data = [
     {

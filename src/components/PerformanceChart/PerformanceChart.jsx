@@ -27,6 +27,16 @@ const performanceLabel = {
   1: "Cardio",
 };
 
+/**
+ * Renders the performance chart
+ * 
+ * @param {Object} props
+ * @param {Array<Object>} props.data the data for the performance chart
+ * @param {string} props.data[].kind the kind of performance
+ * @param {number} props.data[].value the value of the performance
+ * 
+ * @returns The PerformanceChart
+ */
 const PerformanceChart = ({ data }) => {
   data.sort(
     (perf1, perf2) =>

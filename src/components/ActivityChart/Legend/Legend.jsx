@@ -7,6 +7,16 @@ const legendLabels = {
   kilogram: "Poids",
 };
 
+/**
+ * Custom legend component used by the activity chart
+ * 
+ * @param {Object} props
+ * @param {Array<Object>} props.legendItems the array of legend items
+ * @param {String} props.legendItems[].datakey the datakey of the legend item
+ * @param {String} props.legendItems[].color the color of the legend item
+ * @param {String} props.legendItems[].unit the unit of the legend item
+ * @returns the custom legend for the activity chart
+ */
 const Legend = ({ legendItems }) => {
   return (
     <div className={styles.legend}>

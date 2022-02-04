@@ -13,6 +13,17 @@ import CustomLegend from "./Legend";
 
 import styles from "./activityChart.module.scss";
 
+/**
+ * 
+ * Renders the activity chart
+ * 
+ * @param {Object} props
+ * @param {Array<Object>} props.data the user activity data
+ * @param {number} props.data[].day the number of the day of the activity
+ * @param {number} props.data[].kilogram the weight of the user for a given day
+ * @param {number} props.data[].calories the calories burnt by the user for a given day
+ * @returns the activity chart
+ */
 const ActivityChart = ({ data }) => {
   return (
     <div className={styles.activityChart}>

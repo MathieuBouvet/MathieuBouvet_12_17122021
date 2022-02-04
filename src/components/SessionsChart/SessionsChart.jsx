@@ -13,6 +13,17 @@ import CustomCursor from "./CustomCursor";
 
 import styles from "./sessionsChart.module.scss";
 
+/**
+ * Returns the session chart
+ * 
+ * @param {Object} props 
+ * @param {Array<Object>} props.data
+ * @param {Object} props.data[]
+ * @param {string} props.data[].day The day of the week
+ * @param {number} props.data[].sessionLength The length of the session for the given day
+ * 
+ * @returns The session chart
+ */
 const SessionsChart = ({ data }) => {
   return (
     <div className={styles.sessionsChart}>
